@@ -1,44 +1,36 @@
 <?php  
-    class persona{
-        public $nome;
-        public $cognome;
-        public $eta;
-        //Costruttore
-        function __construct($nome, $cognome){
-            $this->nome = $nome;
-            $this->cognome = $cognome;
+    class user{
+        public $name;
+        public $surname;
+        public $age;
+        //Constructor
+        function __construct($name, $surname){
+            $this->name = $name;
+            $this->surname = $surname;
         }
-        
-        //Get e Set
-        function set_nome($nome){
-            $this->nome = $nome;
+        //Get and set
+        function set_age($age){
+            $this->age = $age;
         }
-        function get_nome(){
-            return $this->nome;
+        function get_age(){
+            return $this->age;
         }
-        
-        function set_cognome($cognome){
-            $this->cognome = $cognome;
-        }
-        function get_cognome(){
-            return $this->cognome;
-        }
-
-        function set_eta($eta){
-            $this->eta = $eta;
-        }
-        function get_eta(){
-            return $this->eta;
-        }
-
-        //Metodi
-        function saluto(){
-            echo "ciao sono $this->nome $this->cognome";   
+        //Methods
+        function methodExample(){
+            echo "Hi, I am $this->name $this->surname";   
         }
     }
+    
+    $firstUser = new user("Mario" , "Rossi");
+    $firstUser->set_age(12);
+    echo $firstUser->get_age();
 
-$persona1 = new persona("Mario" , "Rossi");
-$persona1->set_eta(12);
-echo $persona1->get_nome();
-//$persona1->saluto();
-var_dump($persona1);
+    class teacher extends user{
+        public $subject;
+
+        public function __construct($name, $surname, $subject){
+            $this->name = $name;
+            $this->surname = $surname;
+            $this->subject = $subject;
+        }
+    }
